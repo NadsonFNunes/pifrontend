@@ -1,21 +1,31 @@
-h1{ text-align: center;
+#titulo{ text-align: center;
     padding: 50px;
-    color: aqua;
+    color: rgb(26, 83, 105);
 
 }
+
 .container{
     padding: 20px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     background-color: rgb(161, 170, 170);
+    text-align: justify;
    
 }
-#mala{
+div{
+    text-align: center;
+}
+
+#malas{    
     padding: 20px;
     height: 500px;
     width:  auto;
-    display: inline-block;
     width: auto;
-    
-    
+}
+
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(26, 83, 105);
 }

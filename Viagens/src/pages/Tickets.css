@@ -17,6 +17,7 @@ body{
 }
 form h3{
     text-align: center;
+    padding: 15px;
 
 }
 .elements{
@@ -43,4 +44,12 @@ li{
     padding: 30px;
     text-align: center;
     display: inline-block;
+}
+p{
+    padding: 15px;
+}
+h3{
+    text-align: center;
+    padding: 50px;
+    color: rgb(1, 12, 17)
 }

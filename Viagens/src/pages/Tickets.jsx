@@ -10,7 +10,8 @@ export default function Tickets() {
 
             <div>
                 <form action="" id="passagem">
-                    <h1>Passagens</h1>
+                    <h3 id="mensagem">Passagens</h3>
+
                     <p> Ida <input type="date" name="" id="data" className='elements' /> </p>
 
                     <p> Volta <input type="date" name="" id="data" className='elements' /> </p>

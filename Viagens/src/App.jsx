@@ -29,21 +29,22 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {logado ?                                    /* Isso seria um IF       para páginas reservadas */
+        {logado ?                                    
           <>
-            <Route path="/home" element={<Layout id={userID} onLogout={handleLogout} />} >
+            <Route path="/home" element={<Home id={userID} onLogout={handleLogout} />} />
+            <Route path='/passagens' element={<Tickets />} />
+            
 
-              <Route path='home/:id' element={<Home />} />
-              <Route path='passagens/:id' element={<Tickets />} />
-              
-            </Route>
           </>
-          :                                        /* E isso seria um Else */
 
+
+          :                                        
           <Route path='/' element={<Login onLogin={handleLogin} />} />
+          
 
         }
         
+
         <Route path='*' element={<Erro404 />} />
         <Route path='/esquecisenha' element={<NewPassword />} />
         <Route path='/novousuario' element={<NewUser />} />

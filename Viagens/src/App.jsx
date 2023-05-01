@@ -43,8 +43,7 @@ export default function App() {
           
 
         }
-        
-
+      
         <Route path='*' element={<Erro404 />} />
         <Route path='/esquecisenha' element={<NewPassword />} />
         <Route path='/novousuario' element={<NewUser />} />

@@ -1,0 +1,34 @@
+body{
+    background-color:blueviolet
+    
+}
+#login{
+    background-color: rgba(0, 255, 255, 0.37);
+    max-width: 500px;
+    width: 70%;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+
+.elements{
+    width: 100%;
+    height: 45px;
+    border: 1px solid;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+#enviar{
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+} 
+h3{
+    
+    font-size: 30px;
+}

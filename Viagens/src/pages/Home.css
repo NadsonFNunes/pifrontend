@@ -1,0 +1,21 @@
+h1{ text-align: center;
+    padding: 50px;
+    color: aqua;
+
+}
+.container{
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgb(161, 170, 170);
+   
+}
+#mala{
+    padding: 20px;
+    height: 500px;
+    width:  auto;
+    display: inline-block;
+    width: auto;
+    
+    
+}

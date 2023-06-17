@@ -1,8 +1,24 @@
 import { NavLink } from 'react-router-dom'
 import './NewUser.css'
-import Login from './Login'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '../services/firebaseConfig';
+import { useState } from 'react';
+
 
 export default function NewUser() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
+    const [ createUserWithEmailAndPassword, user, loading, error ] =
+        useCreateUserWithEmailAndPassword(auth);
+
+    function handleSingnOut(e){
+        e.preventDefault();
+        createUserWithEmailAndPassword(email, password);
+
+    }
+
     return (
         <>
 
@@ -11,14 +27,20 @@ export default function NewUser() {
             <form action="" >
                 <h1>Novo Usuário</h1>
                 
-                <p> Nome Completo:<input type="text" name="" id=""  className='elements'/> </p>
-                <p> E-mail:<input type="email" name="" id="" className='elements'/> </p>
-                <p>Endereço:<input type="text" name="" id="" className='elements'/> </p>
-                <p>Telefone:<input type="tell" name="" id="" className='elements'/> </p>
-                <p>Data de nascimento:<input type="date" name="" id="" className='elements'/> </p>
-                <p>Senha:<input type="password" name="" id="" className='elements'/> </p>
+                <p> E-mail:<input type="email" 
+                name="" id="" 
+                className='elements' 
+                onChange={e => setEmail(e.target.value)} /> 
+                
+                </p>
+
+                <p>Senha:<input type="password" 
+                name="" id="" 
+                className='elements'  
+                onChange={e => setPassword(e.target.value)}/> </p>
+
                 <p>
-                <button>Criar Conta</button> 
+                <button onClick={handleSingnOut} >Criar Conta</button> 
                 <button><NavLink to='/'> Voltar </NavLink></button>
                 </p>
             </form>

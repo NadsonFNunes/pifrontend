@@ -7,7 +7,7 @@ import NewPassword from "./pages/NewPassword"
 import Erro404 from "./pages/Erro404"
 import NewUser from "./pages/NewUser"
 import Tickets from "./pages/Tickets"
-import Layout from "./components/Layout"
+
 
 
 export default function App() {

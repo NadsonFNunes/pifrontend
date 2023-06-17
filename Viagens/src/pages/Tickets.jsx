@@ -8,7 +8,7 @@ export default function Tickets() {
             <Layout />
 
 
-            <div>
+            <div id="form">
                 <form action="" id="passagem">
                     <h3 id="mensagem">Passagens</h3>
 

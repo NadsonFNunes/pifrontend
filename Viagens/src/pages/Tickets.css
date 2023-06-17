@@ -3,8 +3,12 @@ body{
     
     
 }
+#form{position: center;
+    
 
+}
 #passagem{
+
     padding: 20px;
     background-color: rgba(45, 185, 185, 0.37);
     max-width: 500px;
@@ -13,7 +17,9 @@ body{
     left: 50%;
     top: 60%;
     transform: translate(-50%,-50%);
-    border-radius: 10px;
+    border-radius: 10px; 
+
+
 }
 form h3{
     text-align: center;

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import './NewUser.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from '../services/firebaseConfig';
+import auth from '/src/services/FirebaseConfig.js' 
 import { useState } from 'react';
 
 

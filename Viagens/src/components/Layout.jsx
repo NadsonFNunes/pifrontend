@@ -8,9 +8,16 @@ export default function Layout(props) {
             <header>
 
                 <h1>DF Viagens</h1>
-                <Navbar id={props.id} onLogout={props.onLogout}/>
-                
+                <Navbar />
+
             </header>
+            <main>
+                <Outlet />
+            </main>
+
+            <footer>
+                <p>Nadson Ferreira 2023</p>
+            </footer>
         </>
     )
 }

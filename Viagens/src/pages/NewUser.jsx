@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import './NewUser.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '/src/services/FirebaseConfig.js' 
+import auth from '../services/FirebaseConfig' 
 import { useState } from 'react';
+import Home from "../pages/Home"
+import { Link } from 'react-router-dom'
 
 
 export default function NewUser() {
@@ -41,7 +43,7 @@ export default function NewUser() {
 
                 <p>
                 <button onClick={handleSingnOut} >Criar Conta</button> 
-                <button><NavLink to='/'> Voltar </NavLink></button>
+                <Link to= "/"> <button > Voltar </button> </Link>
                 </p>
             </form>
         </>

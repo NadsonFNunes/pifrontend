@@ -1,6 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut }
+import { getAuth, signInWithEmailAndPassword, signOut }
   from 'firebase/auth'
-import app from '/src/services/FirebaseConfig.js'  
+import app from './FirebaseConfig'  
 
 
 const auth = getAuth(app)
@@ -20,3 +20,4 @@ export async function login(email, senha) {
 export async function logout() {
   await signOut(auth)
 }
+export default login 

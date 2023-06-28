@@ -40,12 +40,12 @@ export default function LoginForm(props) {
         setErrorLogin("")
         try {
           await handleLogin(email, senha)
-          navigate("/login")
+          navigate("/")
         } catch (error) {
           setErrorLogin(error.message)
         }
       }
-
+      
 
 
     return (

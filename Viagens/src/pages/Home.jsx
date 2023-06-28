@@ -1,15 +1,28 @@
-
-import { useParams } from 'react-router'
-import Layout from '../components/Layout'
+import { useNavigate } from 'react-router-dom'
+import { useState, useEffect, useContext } from 'react'
+import TaskContext from '../contexts/TaskContext'
 import './Home.css'
 import Viagens from '../Images/Viagens.jpg'
 
+
 export default function Home() {
-    const { id } = useParams()
+    const { tarefas, listaTarefas, removeTarefa } = useContext(TaskContext)
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+
+
+    useEffect(() => {
+        async function carrega() {
+            setLoading(true)
+            await listaTarefas()
+            setLoading(false)
+        }
+        carrega()
+    }, [])
+
     return (
         <>
 
-            <Layout />
 
             <main className='container'>
 
@@ -25,13 +38,13 @@ export default function Home() {
                     <img src={Viagens} id='malas' alt="Imagem de viagem" />
                 </div>
 
-                <p>Não perca mais tempo sonhando com as suas próximas férias! 
-                    Entre em contato conosco agora mesmo e descubra como podemos transformar suas viagens em momentos inesquecíveis. 
+                <p>Não perca mais tempo sonhando com as suas próximas férias!
+                    Entre em contato conosco agora mesmo e descubra como podemos transformar suas viagens em momentos inesquecíveis.
                     Mal podemos esperar para ajudá-lo a explorar o mundo!</p>
 
             </main>
 
-
+           
         </>
     )
 }

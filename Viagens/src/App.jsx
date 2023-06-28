@@ -1,12 +1,14 @@
 import { useContext } from "react"
 import { Routes, Route, BrowserRouter, } from "react-router-dom"
+import Layout from "./components/Layout"
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import NewPassword from "./pages/NewPassword"
 import Erro404 from "./pages/Erro404"
 import NewUser from "./pages/NewUser"
 import Tickets from "./pages/Tickets"
-import UserContext from "./contexts/UserContext"
+import UserContext from './contexts/UserContext'
+
   
 export default function App() {
   const { logado } = useContext(UserContext)
@@ -17,10 +19,10 @@ export default function App() {
         {logado ?
           <Route element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="novo" element={<Novo />} />
-            <Route path="editar/:key" element={<Tickets />} />
+            <Route path="passagens" element={<Tickets />} />
+            {/* <Route path="editar/:key" element={<Tickets />} /> */}
           </Route>
-          : <Route index element={<Login />} />}
+          : <Route index element={< Login/>} />}
         <Route path="*" element={<Erro404 />} />
         <Route path='/esquecisenha' element={<NewPassword />} />
         <Route path='/novousuario' element={<NewUser />} />
@@ -28,26 +30,6 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   )
-}
+}  
 
-/* 
-  return (
-    <BrowserRouter>
-    
-      <Routes>
-        {logado ?
-          <Route element={<Layout />}>
-            <Route /* path="home/:id" */ /* element={<Home />} />
-            <Route path='/passagens' element={<Tickets />} />
-          </Route>
-           :
-           <Route path='/' element={<Login />} />
-        }
-            <Route path='*' element={<Erro404 />} />
-            <Route path='/esquecisenha' element={<NewPassword />} />
-            <Route path='/novousuario' element={<NewUser />} />
-          </Routes>
-    </BrowserRouter> */
-/*   )
 
-}  */

@@ -1,11 +1,9 @@
 import { useParams } from "react-router"
-import Layout from "../components/Layout"
 import "./Tickets.css"
 export default function Tickets() {
     const { id } = useParams()
     return (
         <>
-            <Layout />
 
 
             <div id="form">

@@ -1,5 +1,4 @@
-import { urlApi } from "./FirebaseConfig"
-
+import { urlApi } from '../services/firebaseConfig';
 // GET obter, listar
 export async function listaTarefas() {
   let tarefas = []
@@ -15,7 +14,7 @@ export async function listaTarefas() {
 }
 
 //POST criar, inserir
-export async function insereTarefa(tarefa) {
+export async function inserePassagem(tarefa) {
   await fetch(urlApi + "tarefas.json", {
     method: 'POST',
     body: JSON.stringify(tarefa),

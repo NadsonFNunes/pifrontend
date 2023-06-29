@@ -19,7 +19,7 @@ export async function listaTarefas() {
     return tarefas;
 }
 
-export async function insereTarefa(tarefa) {
+export async function inserePassagem(tarefa) {
     await addDoc(collection(db, "tarefas"), tarefa)
 }
 

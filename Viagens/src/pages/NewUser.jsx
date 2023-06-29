@@ -1,10 +1,8 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import './NewUser.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '../services/FirebaseConfig' 
+import { auth } from '../services/firebaseConfig';
 import { useState } from 'react';
-import Home from "../pages/Home"
-import { Link } from 'react-router-dom'
 
 
 export default function NewUser() {
@@ -42,7 +40,7 @@ export default function NewUser() {
                 onChange={e => setPassword(e.target.value)}/> </p>
 
                 <p>
-                <button onClick={handleSingnOut} >Criar Conta</button> 
+               <Link to= "/"> <button onClick={handleSingnOut} >Criar Conta</button> </Link> 
                 <Link to= "/"> <button > Voltar </button> </Link>
                 </p>
             </form>

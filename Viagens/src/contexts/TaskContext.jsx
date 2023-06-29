@@ -1,9 +1,9 @@
 import { createContext, useState } from "react"
-import { insereTarefa, listaTarefas, modificaTarefa, removeTarefa } from "../services/TaskServices"
+import { inserePassagem, listaTarefas, modificaTarefa, removeTarefa } from "../services/TaskServices"
 
 const TaskContext = createContext({
   tarefas: [],
-  insereTarefa: () => { },
+  inserePassagem: () => { },
   modificaTarefa: () => { },
   removeTarefa: () => { },
   listaTarefas: () => { },
@@ -14,7 +14,7 @@ export function TaskContextProvider(props) {
 
   async function inserir(tarefa) {
     try {
-      await insereTarefa(tarefa)
+      await inserePassagem(tarefa)
       setMinhasTarefas([...minhasTarefas, tarefa])
     } catch (error) {
       throw Error(error.message)
@@ -49,7 +49,7 @@ export function TaskContextProvider(props) {
 
   const contexto = {
     tarefas: minhasTarefas,
-    insereTarefa: inserir,
+    inserePassagem: inserir,
     modificaTarefa: modificar,
     removeTarefa: remover,
     listaTarefas: listar,

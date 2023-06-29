@@ -52,7 +52,7 @@ export default function LoginForm(props) {
         <>
 
             <form action="" id='login' onSubmit={handleSubmit(onSubmit)}>
-                <img src={Logo} alt="Logo login" id='Img' />
+                <img src={Logo} alt="Logo login" className='imagem' />
 
                 <h3>Login</h3>
                 {errorLogin && <p className="erro">{errorLogin}</p>}

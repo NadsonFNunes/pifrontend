@@ -4,12 +4,12 @@ import { inserePassagem, listaTarefas, modificaTarefa, removeTarefa } from "../s
 const TiketContext = createContext({
   tarefas: [],
   inserePassagem: () => { },
-  /* modificaTarefa: () => { },
+   modificaTarefa: () => { },
   removeTarefa: () => { },
-  listaTarefas: () => { }, */
+  listaTarefas: () => { }, 
 })
 
-export function TaskContextProvider(props) {
+export function UserTiketProvider(props) {
   const [minhasTarefas, setMinhasTarefas] = useState([])
 
   async function inserir(tarefa) {
@@ -21,13 +21,13 @@ export function TaskContextProvider(props) {
     }
   }
 
-/*   async function modificar(tarefa) {
+  async function modificar(tarefa) {
     try {
       await modificaTarefa(tarefa)
     } catch (error) {
       throw Error(error.message)
     }
-  } */
+  } 
 
   async function remover(key) {
     try {

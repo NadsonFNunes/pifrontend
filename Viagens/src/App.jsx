@@ -23,10 +23,12 @@ export default function App() {
             <Route path="passagens" element={<Tickets />} />
         
           </Route>
-          : <Route index element={< Login/>} />}
+          :<Route index element={< Login/>} />}
+          <>
         <Route path="*" element={<Erro404 />} />
         <Route path='/esquecisenha' element={<NewPassword />} />
         <Route path='/novousuario' element={<NewUser />} />
+        </>
       </Routes>
     </BrowserRouter>
   )

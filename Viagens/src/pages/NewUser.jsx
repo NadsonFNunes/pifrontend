@@ -3,25 +3,29 @@ import './NewUser.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../services/firebaseConfig';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+
 
 
 export default function NewUser() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate()
-    
+
     const [ createUserWithEmailAndPassword, user, loading, error ] =
         useCreateUserWithEmailAndPassword(auth);
-
+   
     function handleSingnIn(e){
         e.preventDefault();
-        createUserWithEmailAndPasswor(email, password);
-        history.push('/');
+        createUserWithEmailAndPassword(email, password)
+        .then(() => {
+            window.location.href = '/';
+          })
+          .catch((error) => {
+            
+            console.log('Erro ao criar a conta:', error);
+          });
 
     }
-
 
     return (
         <>
@@ -44,7 +48,7 @@ export default function NewUser() {
                 onChange={e => setPassword(e.target.value)}/> </p>
 
                 <p>
-               <Link> <button onClick={handleSingnIn} >Criar Conta</button> </Link> 
+               <Link to= "/"> <button onClick={handleSingnIn} >Criar Conta</button> </Link> 
                 <Link to= "/"> <button > Voltar </button> </Link>
                 </p>
             </form>

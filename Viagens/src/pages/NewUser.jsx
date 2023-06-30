@@ -3,21 +3,25 @@ import './NewUser.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../services/firebaseConfig';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 
 export default function NewUser() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate()
     
     const [ createUserWithEmailAndPassword, user, loading, error ] =
         useCreateUserWithEmailAndPassword(auth);
 
-    function handleSingnOut(e){
+    function handleSingnIn(e){
         e.preventDefault();
-        createUserWithEmailAndPassword(email, password);
+        createUserWithEmailAndPasswor(email, password);
+        history.push('/');
 
     }
+
 
     return (
         <>
@@ -40,7 +44,7 @@ export default function NewUser() {
                 onChange={e => setPassword(e.target.value)}/> </p>
 
                 <p>
-               <Link to= "/"> <button onClick={handleSingnOut} >Criar Conta</button> </Link> 
+               <Link> <button onClick={handleSingnIn} >Criar Conta</button> </Link> 
                 <Link to= "/"> <button > Voltar </button> </Link>
                 </p>
             </form>

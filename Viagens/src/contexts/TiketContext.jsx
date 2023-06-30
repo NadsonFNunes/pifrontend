@@ -1,12 +1,12 @@
 import { createContext, useState } from "react"
 import { inserePassagem, listaTarefas, modificaTarefa, removeTarefa } from "../services/TaskServices"
 
-const TaskContext = createContext({
+const TiketContext = createContext({
   tarefas: [],
   inserePassagem: () => { },
-  modificaTarefa: () => { },
+  /* modificaTarefa: () => { },
   removeTarefa: () => { },
-  listaTarefas: () => { },
+  listaTarefas: () => { }, */
 })
 
 export function TaskContextProvider(props) {
@@ -21,13 +21,13 @@ export function TaskContextProvider(props) {
     }
   }
 
-  async function modificar(tarefa) {
+/*   async function modificar(tarefa) {
     try {
       await modificaTarefa(tarefa)
     } catch (error) {
       throw Error(error.message)
     }
-  }
+  } */
 
   async function remover(key) {
     try {
@@ -56,10 +56,10 @@ export function TaskContextProvider(props) {
   }
 
   return (
-    <TaskContext.Provider value={contexto}>
+    <TiketContext.Provider value={contexto}>
       {props.children}
-    </TaskContext.Provider>
+    </TiketContext.Provider>
   )
 }
 
-export default TaskContext
+export default TiketContext

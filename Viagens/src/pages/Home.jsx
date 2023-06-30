@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect, useContext } from 'react'
-import TaskContext from '../contexts/TaskContext'
+import TaskContext from '../contexts/TiketContext'
 import './Home.css'
 import Viagens from '../Images/Viagens.jpg'
 

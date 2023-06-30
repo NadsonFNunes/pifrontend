@@ -9,7 +9,7 @@ import NewUser from "./pages/NewUser"
 import Tickets from "./pages/Tickets"
 import UserContext from './contexts/UserContext'
 
-  
+
 export default function App() {
   const { logado } = useContext(UserContext)
 
@@ -20,9 +20,9 @@ export default function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="passagens" element={<Tickets />} />
-            {/* <Route path="editar/:key" element={<Tickets />} /> */}
+
           </Route>
-          : <Route index element={< Login/>} />}
+          : <Route index element={< Login />} />}
         <Route path="*" element={<Erro404 />} />
         <Route path='/esquecisenha' element={<NewPassword />} />
         <Route path='/novousuario' element={<NewUser />} />
@@ -30,6 +30,6 @@ export default function App() {
       </Routes>
     </BrowserRouter>
   )
-}  
+}
 
 

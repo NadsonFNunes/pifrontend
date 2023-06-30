@@ -1,12 +1,12 @@
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import TaskContext from '../contexts/TaskContext'
+import TiketContext from '../contexts/TiketContext'
 import "./Tickets.css"
 export default function Tickets() {
 
     
-    const { inserePassagem } = useContext(TaskContext)
+    const { inserePassagem } = useContext(TiketContext)
     const { register, handleSubmit } = useForm()
     const navigate = useNavigate()
 
